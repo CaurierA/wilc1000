@@ -1,4 +1,4 @@
-obj-$(CONFIG_WILC) += wilc.o
+obj-$(CONFIG_WILC1000) += wilc1000.o
 
 ccflags-y += -I$(src)/ -DWILC_ASIC_A0 -DWILC_DEBUGFS
 ccflags-y += -DWILC_BT_COEXISTENCE
