@@ -1870,9 +1870,13 @@ static int set_power_mgmt(struct wiphy *wiphy, struct net_device *dev,
 static int change_virtual_intf(struct wiphy *wiphy, struct net_device *dev,
 			       u32 *flags,
 			       enum nl80211_iftype type, struct vif_params *params)
+#error "POUET"                   
 #else
-static int change_virtual_intf(struct wiphy *wiphy, struct net_device *dev,
-			       enum nl80211_iftype type, struct vif_params *params)
+static int change_virtual_intf(struct wiphy *wiphy,
+                                struct net_device *dev,
+                                enum nl80211_iftype type,
+                                struct vif_params *params)
+#error "PAF"
 #endif
 {
 	struct wilc_priv *priv;
