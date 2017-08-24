@@ -1866,27 +1866,20 @@ static int set_power_mgmt(struct wiphy *wiphy, struct net_device *dev,
 	return 0;
 }
 
-#define XSTR(x) STR(x)
-#define STR(x) #x
-
-#if LINUX_VERSION_CODE < KERNEL_VERSION(4,8,0)
-#error "INF 4.8"
-#elif LINUX_VERSION_CODE < KERNEL_VERSION(4,9,0)
-#error "INF 4.9"
-#elif LINUX_VERSION_CODE < KERNEL_VERSION(4,10,0)
-#error "INF 4.10"
+#if LINUX_VERSION_CODE = KERNEL_VERSION(4,9,36)
+static int change_virtual_intf(struct wiphy *wiphy,
+                                struct net_device *dev,
+                                enum nl80211_iftype type,
+                                struct vif_params *params)
 #elif LINUX_VERSION_CODE < KERNEL_VERSION(4,11,0)
-#error "INF 4.11"
 static int change_virtual_intf(struct wiphy *wiphy, struct net_device *dev,
 			       u32 *flags,
 			       enum nl80211_iftype type, struct vif_params *params)
-#error "POUET"
 #else
 static int change_virtual_intf(struct wiphy *wiphy,
                                 struct net_device *dev,
                                 enum nl80211_iftype type,
                                 struct vif_params *params)
-#error "PAF"
 #endif
 {
 	struct wilc_priv *priv;
