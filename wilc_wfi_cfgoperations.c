@@ -1866,7 +1866,7 @@ static int set_power_mgmt(struct wiphy *wiphy, struct net_device *dev,
 	return 0;
 }
 
-#if LINUX_VERSION_CODE = KERNEL_VERSION(4,9,36)
+#if LINUX_VERSION_CODE == KERNEL_VERSION(4,9,36)
 static int change_virtual_intf(struct wiphy *wiphy,
                                 struct net_device *dev,
                                 enum nl80211_iftype type,
