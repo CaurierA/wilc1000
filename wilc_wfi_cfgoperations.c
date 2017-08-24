@@ -1866,8 +1866,13 @@ static int set_power_mgmt(struct wiphy *wiphy, struct net_device *dev,
 	return 0;
 }
 
+#define XSTR(x) STR(x)
+#define STR(x) #x
+
 #if LINUX_VERSION_CODE < KERNEL_VERSION(4,11,0)
-#pragma message "LINUX_VERSION_CODE=" LINUX_VERSION_CODE
+
+#pragma message "The value of LINUX_VERSION_CODE: " XSTR(LINUX_VERSION_CODE)
+
 static int change_virtual_intf(struct wiphy *wiphy, struct net_device *dev,
 			       u32 *flags,
 			       enum nl80211_iftype type, struct vif_params *params)
