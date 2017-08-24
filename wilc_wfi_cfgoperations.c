@@ -1869,8 +1869,8 @@ static int set_power_mgmt(struct wiphy *wiphy, struct net_device *dev,
 #if LINUX_VERSION_CODE == KERNEL_VERSION(4,9,36)
 static int change_virtual_intf(struct wiphy *wiphy,
                                 struct net_device *dev,
-                                u32 *flags,
                                 enum nl80211_iftype type,
+                                u32 *flags,
                                 struct vif_params *params)
 #elif LINUX_VERSION_CODE < KERNEL_VERSION(4,11,0)
 static int change_virtual_intf(struct wiphy *wiphy,
