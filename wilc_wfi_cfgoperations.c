@@ -2289,7 +2289,7 @@ static const struct cfg80211_ops wilc_cfg80211_ops = {
 	.set_default_key = set_default_key,
 	.add_virtual_intf = add_virtual_intf,
 	.del_virtual_intf = del_virtual_intf,
-	.change_virtual_intf = change_virtual_intf,
+	.change_virtual_intf = (int *)change_virtual_intf,
 
 	.start_ap = start_ap,
 	.change_beacon = change_beacon,
