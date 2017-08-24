@@ -1867,6 +1867,7 @@ static int set_power_mgmt(struct wiphy *wiphy, struct net_device *dev,
 }
 
 #if LINUX_VERSION_CODE == KERNEL_VERSION(4,9,36)
+#error "GOOD VALUE"
 static int change_virtual_intf(struct wiphy *wiphy,
                                 struct net_device *dev,
                                 enum nl80211_iftype type,
@@ -2289,7 +2290,7 @@ static const struct cfg80211_ops wilc_cfg80211_ops = {
 	.set_default_key = set_default_key,
 	.add_virtual_intf = add_virtual_intf,
 	.del_virtual_intf = del_virtual_intf,
-	.change_virtual_intf = (int *)change_virtual_intf,
+	.change_virtual_intf = change_virtual_intf,
 
 	.start_ap = start_ap,
 	.change_beacon = change_beacon,
